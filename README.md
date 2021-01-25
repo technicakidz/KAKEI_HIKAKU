@@ -2,4 +2,4 @@
 
 ## memo
 
-ts, React, vuejs(or nextjs), Hasura
+flutter, firebase, React Native
