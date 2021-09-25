@@ -13,8 +13,9 @@ def pico_pay(util_cost, rent):
     print(total)
 
 # 光熱費(int) = 水 + 電気 + ガス + ネット
-# A = 光熱費 / 2 + 60,000(家賃)
+# A:float = 光熱費 / 2 + 60,000(家賃)
+
 # 生活費(int) = x + y
-# B = 一人当たりの生活費 / 2
+# B:float = 一人当たりの生活費 / 2
 # B は差分(unsigned char)
 # ans(int) = A + (+-)B

@@ -10,13 +10,14 @@ CORS(app) #Cross Origin Resource Sharing
 def index():
     return "text parser:)"
 
+# TODO: /logic への遷移先作成
 @app.route("/logic", methods=['GET','POST'])
 def parse():
     #print(request.get_json())
     data = request.get_json()
     text = data['post_text']
 
-    res = logic(text)
+    res = logic(text) # wakati だった
     response = {'result': res}
     #print(response)
     return make_response(jsonify(response))
