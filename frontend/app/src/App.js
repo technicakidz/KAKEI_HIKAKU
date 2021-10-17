@@ -29,10 +29,10 @@ export class App extends React.Component {
     );
   }
 
-// TODO:  core.py の計算ロジックに送信する修正
-  wakati = text => {
-    console.log("input text >>"+text)
-    Axios.post('http://127.0.0.1:5000/wakati', {
+// TODO:  pay.py の計算ロジックに送信する修正
+  pay = text => {
+    console.log("input text >>" + text)
+    Axios.post('http://127.0.0.1:5000/pay', {
       post_text: text
     }).then(function(res) {
       alert(res.data.result);
@@ -40,7 +40,7 @@ export class App extends React.Component {
   };
 
   handleSubmit = event => {
-    this.wakati(this.state.value)
+    this.pay(this.state.value)
     event.preventDefault();
   };
 

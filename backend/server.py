@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request, make_response, jsonify
 from flask_cors import CORS
-# from core import logic
+from pay import *
 
 app = Flask(__name__, static_folder="./build/static", template_folder="./build")
 CORS(app) #Cross Origin Resource Sharing
@@ -10,16 +10,14 @@ CORS(app) #Cross Origin Resource Sharing
 def index():
     return "text parser:)"
 
-# TODO: /logic への遷移先作成
-@app.route("/logic", methods=['GET','POST'])
+@app.route("/pay", methods=['GET','POST'])
 def parse():
-    #print(request.get_json())
     data = request.get_json()
     text = data['post_text']
 
-    res = logic(text) # wakati だった
+    # TODO: 計算ロジックの関数を import
+    res = pay(text)
     response = {'result': res}
-    #print(response)
     return make_response(jsonify(response))
 
 if __name__ == "__main__":
