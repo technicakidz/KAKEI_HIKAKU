@@ -31,7 +31,7 @@ export class App extends React.Component {
 
 // TODO:  pay.py の計算ロジックに送信する修正
   pay = text => {
-    console.log("input text >>" + text)
+    console.log("input text >> " + text)
     Axios.post('http://127.0.0.1:5000/pay', {
       post_text: text
     }).then(function(res) {
